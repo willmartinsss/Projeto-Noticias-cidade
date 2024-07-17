@@ -1,133 +1,260 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Notícias Cidades - Seu Site de notícias</title>
-		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+/* Estrutura do site
+*/
+* {
+	margin:0;
+	padding:0;
+}
 
-	</head>
+body{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	background: #fff url(../imagens/fundo.png) repeat-x;
+}
 
-	<body id="uma-coluna" class="fotos">
+#container {
+	width: 750px;
+	margin: 0 auto;
+}
 
-		
-		<!--Início container-->
-				<div id="container">
+#topo {
+	height: 150px;
+	background: url(../imagens/detalhe-topo.png) no-repeat right top;
+	padding-top: 25px;
+	/*border: 1px solid red;*/
+}
 
-				<!--Início topo-->
-				<div id="topo">
+.logo {
+	width: 152px;
+	height: 66px;
+	background: url(../imagens/logo.png) no-repeat center;
+	text-indent: -3000px;
+}
 
-				<h1 class="logo">Notícias Cidades</h1>
+/* Barra de navegação
+*/
+a:link, a:visited {
+	color: #b10333;
+	padding: 2px;
+}
 
-				<ul id="navegacao">
-					<li class="primeiro">
-						<a id="home" href="index.html">Home</a>
-					</li>
-					<li>
-						<a id="brasil" href="brasil.html">Brasil</a>
-					</li>
-					<li>
-						<a id="internacional" href="internacional.html">Internacional</a>
-					</li>
-					<li>
-						<a id="economia" href="economia.html">Economia</a>
-					</li>
-					<li>
-						<a id="saude" href="saude.html">Saúde</a>
-					</li>
-					<li>
-						<a id="ciencia" href="ciencia.html">Ciência</a>
-					</li>
-					<li>
-						<a id="fotos" href="fotos.html">Fotos</a>
-					</li>
-				</ul>
+a:hover {
+	color: #e50040;
+}
 
-			</div><!--Fim / topo-->
-			<!--Início Conteúdo-->
-			<div id="conteudo">
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
 
-				<!--Início primario-->
-				<div id="primario">
+#topo ul {
+	margin-top: 30px;
+	background: #b10333;
+	float: left;
+}
 
-					<div class="caixa destaque">
+#topo ul li {
+	float: left;
+}
 
-						<h2>Destaques</h2>
+#topo ul a {
+	font-size: 0.9em;
+	display: block;
+	padding: 0.5em 1.5em;
+	line-height: 2.1em;
+	text-decoration: none;
+	color: #fff;
+	background: url(../imagens/divisor.png) no-repeat left center;
+}
 
-						<div class="caixa-conteudo">
+#topo ul .primeiro a {
+	background: none;
+}
 
-							<h3>Nova Legislação</h3>
-							<img class="imagem-principal" src="imagens/tecnologia.jpg" width="100%">
-							<p>
-								lorem ipsum amit set dolor sit, 
-								consectetur adipiscing elit.
-							</p>
-							<a class="link-conteudo" href="nova-legislacao.html">Leia mais</a>
+#topo ul a:hover {
+	color: #69001d;
+}
 
-							<div class="caixa">
-								<h2>Mundo</h2>
+body.home #navegacao a#home,
+body.brasil #navegacao a#brasil, 
+body.internacional #navegacao a#internacional,
+body.fotos #navegacao a#fotos 
+{
+	color: #fff;
+	background: #de003e;
+	cursor: text;
+}
 
-								<div class="caixa-conteudo">
-									
-									<ul id="lista-noticia">
-										<li>
-											<a href="">
-												<img src="imagens/tecnologia.jpg" width="80">
-												<h3>Novas tecnologias!</h3>
-												<p>Lorem ipsum dolor sit amet, 
-														consectetur...</p>
-											</a>
-										</li>
-										<li>
-											<a href="">
-												<img src="imagens/mundo.jpg" width="80">
-												<h3>USA</h3>
-												<p>Lorem ipsum dolor sit amet, 
-														consectetur...</p>
-											</a>
-										</li>
-										<li>
-											<a href="">
-												<img src="imagens/taxi.jpg" width="80">
-												<h3>Guerra na Síria</h3>
-												<p>Lorem ipsum dolor sit amet, 
-														consectetur...</p>
-											</a>
-										</li>
-										<li>
-											<a href="">
-												<img src="imagens/cidade.jpg" width="80">
-												<h3>Rússia aprova leis</h3>
-												<p>Lorem ipsum dolor sit amet, 
-														consectetur...</p>
-											</a>
-										</li>
+/* Configura layout de três colunas */
+#conteudo {
+	margin-top: 60px;
+	background: #f5f5f5;
+}
 
-									</ul>	
+#lateral {
+	width: 180px;
+	float: left;
+	margin: 0 0 20px -750px;
+}
 
-								</div>
-							</div>
+#primario {
+	width: 270px;
+	float: left;
+	margin: 0 0 20px 195px ;
+}
+
+#duas-colunas #primario {
+	width: 555px;
+}
+
+#uma-coluna #primario {
+	width: 750px;
+	margin: 0 0 20px 0;
+}
+
+#secundario {
+	width: 270px;
+	float: left;
+	margin: 0 0 20px 15px;
+}
+
+/*Caixa*/
+.caixa {
+	margin: 10px 0;
+	padding: 5px;
+	background: #f3f3f3 url(../imagens/fundo-caixa.png);
+}
+
+h2 {
+	font-size: 1em;
+	background: #294c71;
+	color: #fff;
+	padding: 5px;
+}
+
+.caixa-conteudo {
+	background: #fff;
+	padding: 5px;
+	margin-top: 5px;
+}
+
+/* Formatar menus laterais
+*/
+#lateral ul a {
+	font-size: 0.9em;
+	padding: 3px;
+	display: block;
+	line-height: 30px;
+	color: #000;
+	text-decoration: none;
+	border-bottom: 1px solid #f3f3f3;
+}
+
+#lateral ul a:hover {
+	background: #f9f9f9 url(../imagens/marcador.png) no-repeat left center;
+	padding-left: 20px;
+	color: #a1a1a1;
+}
+
+/* Formatando formulários
+*/
+label {
+	display: block; 
+	cursor: pointer;
+}
+
+input {
+	padding: 5px;
+	width: 125px;
+	font-size: 0.9em;
+	background-color: #fff;
+}
+
+input.submit {
+	width: 80px;
+	color: #fff;
+	background-color: #b10333;
+	border: 2px solid #870529;
+}
+
+/*Formatando imagens*/
+img.imagem-principal {
+	width: 98%;
+	border: 3px solid #dfdfdf;
+}
+
+/* Formatando cabeçalhos */
+h3 {
+	text-transform: uppercase;
+	display: inline;
+	font-size: 0.8em;
+	padding: 3px;
+}
+
+.destaque h3 {
+	background: #b10333;
+	color: #fff;
+}
+
+.entrevista h3 {
+	background: #de003e;
+}
+
+/*Formatando lista de notícias*/
+#lista-noticias li {
+	padding: 2px;
+	border-bottom: 1px solid #ccc; 
+	height: 62px;
+}
+
+#lista-noticias li a img {
+	float: left;
+	margin: 5px;
+}
+
+#lista-noticias li a {
+	text-decoration: none;
+}
+
+#lista-noticias li a h3 {
+	font-size: 0.8em;
+	padding: 0;
+	color: #3e7ab9;
+}
+
+#lista-noticias li a p {
+	font-size: 0.7em;
+	color: #000;
+}
+
+#lista-noticias li:hover {
+	background: #eee;
+	cursor: pointer;
+}
+
+
+/*Rodape*/
+#container-rodape {
+	background: #294c71;
+	padding: 20px;
+}
+
+#rodape {
+	width: 750px;
+	margin: 0 auto;
+	color: #fff;
+}
 
 
 
 
-						</div>
-					</div>
-				</div>
-				<!--Fim primario-->
 
-			</div>	
-			<!--Fim /Conteúdo-->
 
-		</div>
-		<!--Fim container-->
 
-		
-		<div id="container-rodape" style="clear:both;">
-			<div id="rodape">
-			&copy; Copyright 2000-2018 Notícias Cidades
-			</div>
-		</div>
-	
-	</body>
-</html>
+
+
+
+
+
+
+
+
